@@ -8,7 +8,8 @@ class Vendor:
     def add(self, item):
         self.inventory.append(item)
         return item
-    
+
+# Instance method to remove item in inventory
     def remove(self, item):
         if item not in self.inventory:
             return False
