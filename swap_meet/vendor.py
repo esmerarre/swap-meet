@@ -42,6 +42,15 @@ class Vendor:
             return True
 
         return False
+        # if (my_item not in self.inventory) or (their_item not in other_vendor.inventory):
+        #     return False
+        # self.remove(my_item)
+        # self.add(their_item)
+        # other_vendor.remove(their_item)
+        # other_vendor.add(my_item)
+        # return True
+
+
     
     def swap_first_item(self, other_vendor):
         if len(self.inventory) == 0 or len(other_vendor.inventory) == 0:
