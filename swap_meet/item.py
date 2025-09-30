@@ -13,7 +13,7 @@ class Item:
     
     def condition_description(self):
         if self.condition == 0:
-            return "Condition 0"
+            return "Condition 0-heavily used"
         elif self.condition == 1:
             return "Condition 1"
         elif self.condition == 2:
@@ -23,6 +23,6 @@ class Item:
         elif self.condition == 4:
             return "Condition 4"
         elif self.condition == 5:
-            return "Condition 5"
+            return "Condition 5-mint condition"
         
         raise ValueError("Unknown Condition Type")
