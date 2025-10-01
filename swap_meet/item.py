@@ -13,16 +13,16 @@ class Item:
     
     def condition_description(self):
         if self.condition == 0:
-            return "Condition 0-heavily used"
+            return "heavily used 0"
         elif self.condition == 1:
-            return "Condition 1"
+            return "gently used 1"
         elif self.condition == 2:
-            return "Condition 2"
+            return "barely used 2"
         elif self.condition == 3:
-            return "Condition 3"
+            return "brand new 3"
         elif self.condition == 4:
-            return "Condition 4"
+            return "with tags 4"
         elif self.condition == 5:
-            return "Condition 5-mint condition"
-        
+            return "mint condition 5"
+        #raising an Error if the conditions are not between 0-5
         raise ValueError("Unknown Condition Type")

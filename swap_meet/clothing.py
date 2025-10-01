@@ -1,4 +1,3 @@
-import uuid
 from .item import Item
 
 class Clothing(Item):
