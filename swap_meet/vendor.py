@@ -23,32 +23,13 @@ class Vendor:
         return None
     
     def swap_items(self, other_vendor, my_item, their_item):
-        my_item_index = -1
-        their_item_index = -1
-
-        for index in range(len(self.inventory)):
-            item = self.inventory[index]
-            if my_item == item:
-                my_item_index = index 
-
-        for index in range(len(other_vendor.inventory)):
-            item = other_vendor.inventory[index]
-            if their_item == item:
-                their_item_index = index
-
-        if my_item_index > -1 and their_item_index > -1:
-            other_vendor.inventory.append(self.inventory.pop(my_item_index))
-            self.inventory.append(other_vendor.inventory.pop(their_item_index))
-            return True
-
-        return False
-        # if (my_item not in self.inventory) or (their_item not in other_vendor.inventory):
-        #     return False
-        # self.remove(my_item)
-        # self.add(their_item)
-        # other_vendor.remove(their_item)
-        # other_vendor.add(my_item)
-        # return True
+        if (my_item not in self.inventory) or (their_item not in other_vendor.inventory):
+            return False
+        self.remove(my_item)
+        self.add(their_item)
+        other_vendor.remove(their_item)
+        other_vendor.add(my_item)
+        return True
 
 
     
