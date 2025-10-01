@@ -116,6 +116,7 @@ def test_swap_items_from_my_empty_returns_false():
 
 # @pytest.mark.skip
 def test_swap_items_from_their_empty_returns_false():
+    #Arrange
     item_a = Item()
     item_b = Item()
     item_c = Item()
@@ -129,9 +130,8 @@ def test_swap_items_from_their_empty_returns_false():
 
     nobodys_item = Item()
 
+    #Act
     result = fatimah.swap_items(jolie, item_b, nobodys_item)
 
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
+    #Assert
     assert result == False
