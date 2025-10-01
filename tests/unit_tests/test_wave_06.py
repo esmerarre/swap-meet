@@ -155,11 +155,29 @@ def test_swap_best_by_category_reordered():
     # - That result is truthy
     # - That tai and jesse's inventories are the correct length
     # - That all the correct items are in tai and jesse's inventories, and that the items that were swapped are not there
+
     assert result
     assert len(jesse.inventory) == 3
     assert len(tai.inventory) == 3
-    assert (item_d and item_e and item_c) in jesse.inventory 
-    assert (item_a and item_b and item_f) in tai.inventory  
+
+    ## Previous approach
+    # assert (item_d and item_e and item_c) in jesse.inventory 
+    # assert (item_a and item_b and item_f) in tai.inventory  
+    
+    ## correct but long way 
+    # assert item_d in jesse.inventory
+    # assert item_e in jesse.inventory
+    # assert item_c in jesse.inventory
+    # assert item_a in tai.inventory
+    # assert item_b in tai.inventory
+    # assert item_f in tai.inventory
+
+    ## Recommended approach: assert all(item in target_list for item in items_to_check)
+    assert all(item in jesse.inventory for item in [item_d, item_e, item_c])
+    assert all(item in tai.inventory for item in [item_a, item_b, item_f])
+
+
+
 #item c in jesses inventory and item f in tai inventory 
 
 # @pytest.mark.skip
