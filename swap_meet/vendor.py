@@ -31,10 +31,11 @@ class Vendor:
         other_vendor.add(my_item)
         return True
 
-
-    
     def swap_first_item(self, other_vendor):
-        if len(self.inventory) == 0 or len(other_vendor.inventory) == 0:
+        # Previous line:
+        # if len(self.inventory) == 0 or len(other_vendor.inventory) == 0:
+        #the added line below is more pythonic way of checking that the list is empty
+        if not self.inventory or not other_vendor.inventory:
             return False
 
         temp_item = self.inventory[0]
